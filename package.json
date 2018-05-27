@@ -20,6 +20,24 @@
                 "command": "extension.sayHello",
                 "title": "Hello World"
             }
+        ],
+        "grammars": [
+            {
+                "injectTo": [
+                    "source.js",
+                    "source.js.jsx",
+                    "source.jsx",
+                    "source.ts",
+                    "source.tsx",
+                    "text.html.basic",
+                    "source.*"
+                ],
+                "scopeName": "inline.omni-tags",
+                "path": "./syntaxes/omni-tags.json",
+                "embeddedLanguages": {
+                    "meta.embedded.block.html": "html"
+                }
+            }
         ]
     },
     "scripts": {

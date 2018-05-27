@@ -1,0 +1,31 @@
+{
+	"fileTypes": [],
+	"injectionSelector": "comment, text.plain, string",
+	"patterns": [
+		{
+			"name": "omni-tag",
+			"begin": "(§+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.omni-tag"
+				}
+			},
+			"end": "(?=\\s)",
+			"patterns": [
+				{
+					"name": "constant.language.omni-tag",
+					"match": ":"
+				},
+				{
+					"name": "support.variable.omni-tag",
+					"match": "\\w+"
+				},
+				{
+					"name": "markup.bold.omni-tag",
+					"match": "!"
+				}
+			]
+		}
+	],
+	"scopeName": "inline.omni-tags"
+}
