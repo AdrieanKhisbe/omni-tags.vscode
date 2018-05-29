@@ -1,11 +1,25 @@
 {
 	"fileTypes": [],
 	"injectionSelector": "comment, text.plain, string",
+	"repository": {
+		"colon": {
+			"name": "constant.language.omni-tag",
+			"match": ":"
+		},
+		"word": {
+			"name": "support.variable.omni-tag",
+			"match": "\\w+"
+		},
+		"ponctuation": {
+			"name": "markup.bold.omni-tag",
+			"match": "!|\\?"
+		}
+	},
 	"patterns": [
 		{
 			"name": "omni-tag",
 			"begin": "(§+)(?!.*:\\s)",
-			"comment": "the second part of regexp is to prevent to match only the § for detailed tags §todo: ", 
+			"comment": "the second part of regexp is to prevent to match only the § for detailed tags §todo: ",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.omni-tag"
@@ -14,23 +28,20 @@
 			"end": "(?!\\S+(?<!:)\\s+?)",
 			"patterns": [
 				{
-					"name": "constant.language.omni-tag",
-					"match": ":"
+					"include": "#colon"
 				},
 				{
-					"name": "support.variable.omni-tag",
-					"match": "\\w+"
+					"include": "#word"
 				},
 				{
-					"name": "markup.bold.omni-tag",
-					"match": "!"
+					"include": "#ponctuation"
 				}
 			]
 		},
 		{
 			"name": "omni-tag-with-details",
 			"begin": "(§+)(?=([\\w_-]+:+)+)",
-			"comment":"the second part of regexp is to ensure this is a tag with trailing colon",
+			"comment": "the second part of regexp is to ensure this is a tag with trailing colon",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.omni-tag"
@@ -39,16 +50,13 @@
 			"end": "$",
 			"patterns": [
 				{
-					"name": "constant.language.omni-tag",
-					"match": ":"
+					"include": "#colon"
 				},
 				{
-					"name": "support.variable.omni-tag",
-					"match": "\\w+"
+					"include": "#word"
 				},
 				{
-					"name": "markup.bold.omni-tag",
-					"match": "!"
+					"include": "#ponctuation"
 				}
 			]
 		}
