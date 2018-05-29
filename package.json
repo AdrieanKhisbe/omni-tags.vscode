@@ -25,7 +25,10 @@
             {
                 "injectTo": [
                     "text",
-                    "source"
+                    "source",
+
+                    "source.js",
+                    "source.org"
                 ],
                 "scopeName": "inline.omni-tags",
                 "path": "./syntaxes/omni-tags.json"
