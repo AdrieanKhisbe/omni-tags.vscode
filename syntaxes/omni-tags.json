@@ -5,6 +5,7 @@
 		{
 			"name": "omni-tag",
 			"begin": "(§+)(?!.*:\\s)",
+			"comment": "the second part of regexp is to prevent to match only the § for detailed tags §todo: ", 
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.omni-tag"
@@ -29,6 +30,7 @@
 		{
 			"name": "omni-tag-with-details",
 			"begin": "(§+)(?=([\\w_-]+:+)+)",
+			"comment":"the second part of regexp is to ensure this is a tag with trailing colon",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.omni-tag"
