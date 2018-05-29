@@ -4,13 +4,37 @@
 	"patterns": [
 		{
 			"name": "omni-tag",
-			"begin": "(§+)",
+			"begin": "(§+)(?!.*:\\s)",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.omni-tag"
 				}
 			},
-			"end": "(?=\\s)",
+			"end": "(?!\\S+(?<!:)\\s+?)",
+			"patterns": [
+				{
+					"name": "constant.language.omni-tag",
+					"match": ":"
+				},
+				{
+					"name": "support.variable.omni-tag",
+					"match": "\\w+"
+				},
+				{
+					"name": "markup.bold.omni-tag",
+					"match": "!"
+				}
+			]
+		},
+		{
+			"name": "omni-tag-with-details",
+			"begin": "(§+)(?=([\\w_-]+:+)+)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.omni-tag"
+				}
+			},
+			"end": "$",
 			"patterns": [
 				{
 					"name": "constant.language.omni-tag",
