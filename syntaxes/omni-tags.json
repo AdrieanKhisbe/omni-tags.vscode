@@ -6,9 +6,13 @@
 			"name": "constant.language.omni-tag",
 			"match": ":"
 		},
-		"word": {
+		"keyword": {
 			"name": "support.variable.omni-tag",
-			"match": "\\w+"
+			"match": "(?<=[§:])\\w+"
+		},
+		"details": {
+			"name": "text.plain.omni-tag",
+			"match": "(?<=:\\s)[^'\"`]*"
 		},
 		"ponctuation": {
 			"name": "markup.bold.omni-tag",
@@ -31,7 +35,7 @@
 					"include": "#colon"
 				},
 				{
-					"include": "#word"
+					"include": "#keyword"
 				},
 				{
 					"include": "#ponctuation"
@@ -47,16 +51,19 @@
 					"name": "keyword.omni-tag"
 				}
 			},
-			"end": "$",
+			"end": "\\z|$|(?=['\"`])",
 			"patterns": [
 				{
 					"include": "#colon"
 				},
 				{
-					"include": "#word"
+					"include": "#keyword"
 				},
 				{
 					"include": "#ponctuation"
+				},
+				{
+					"include": "#details"
 				}
 			]
 		}
