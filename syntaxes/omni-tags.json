@@ -22,14 +22,14 @@
 	"patterns": [
 		{
 			"name": "omni-tag",
-			"begin": "([※§¤]+)(?!.*:\\s)",
+			"begin": "([※§¤]+)(?=[\\w:])(?!.*:\\s)",
 			"comment": "the second part of regexp is to prevent to match only the § for detailed tags §todo: ",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.omni-tag"
 				}
 			},
-			"end": "(?!\\S+(?<!:)\\s+?)",
+			"end": "(?!\\S+(?<!:)\\s+?)|(?=['\"`])",
 			"patterns": [
 				{
 					"include": "#colon"
