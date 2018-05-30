@@ -11,14 +11,19 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.insertSecondarySymbol",
+        "onCommand:extension.insertTertiarySymbol"
     ],
     "main": "./extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.insertSecondarySymbol",
+                "title": "Insert the secondary tag symbol"
+            },
+            {
+                "command": "extension.insertTertiarySymbol",
+                "title": "Insert the tertiary tag symbol"
             }
         ],
         "grammars": [
@@ -26,12 +31,25 @@
                 "injectTo": [
                     "text",
                     "source",
-
                     "source.js",
                     "source.org"
                 ],
                 "scopeName": "inline.omni-tags",
                 "path": "./syntaxes/omni-tags.json"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.insertSecondarySymbol",
+                "key": "ctrl+k ctrl+6",
+                "mac": "cmd+k cmd+6",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.insertTertiarySymbol",
+                "key": "ctrl+k 6",
+                "mac": "cmd+k 6",
+                "when": "editorTextFocus"
             }
         ]
     },
@@ -45,5 +63,8 @@
         "eslint": "^4.11.0",
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "lodash": "^4.17.10"
     }
 }
