@@ -11,18 +11,18 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.insertSecondarySymbol",
-        "onCommand:extension.insertTertiarySymbol"
+        "onCommand:omni-tags.editing.insertSecondarySymbol",
+        "onCommand:omni-tags.editing.insertTertiarySymbol"
     ],
-    "main": "./extension",
+    "main": "./src/omni-tags",
     "contributes": {
         "commands": [
             {
-                "command": "extension.insertSecondarySymbol",
+                "command": "omni-tags.editing.insertSecondarySymbol",
                 "title": "Insert the secondary tag symbol"
             },
             {
-                "command": "extension.insertTertiarySymbol",
+                "command": "omni-tags.editing.insertTertiarySymbol",
                 "title": "Insert the tertiary tag symbol"
             }
         ],
@@ -40,13 +40,13 @@
         ],
         "keybindings": [
             {
-                "command": "extension.insertSecondarySymbol",
+                "command": "omni-tags.editing.insertSecondarySymbol",
                 "key": "ctrl+k ctrl+6",
                 "mac": "cmd+k cmd+6",
                 "when": "editorTextFocus"
             },
             {
-                "command": "extension.insertTertiarySymbol",
+                "command": "omni-tags.editing.insertTertiarySymbol",
                 "key": "ctrl+k 6",
                 "mac": "cmd+k 6",
                 "when": "editorTextFocus"
