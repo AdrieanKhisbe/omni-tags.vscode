@@ -8,7 +8,7 @@
 		},
 		"keyword": {
 			"name": "support.variable.omni-tag",
-			"match": "(?<=[§:])\\w+"
+			"match": "(?<=[※§¤:])\\w+"
 		},
 		"details": {
 			"name": "text.plain.omni-tag",
@@ -16,13 +16,13 @@
 		},
 		"ponctuation": {
 			"name": "markup.bold.omni-tag",
-			"match": "!|\\?"
+			"match": "!|\\?|¡|"
 		}
 	},
 	"patterns": [
 		{
 			"name": "omni-tag",
-			"begin": "(§+)(?!.*:\\s)",
+			"begin": "([※§¤]+)(?!.*:\\s)",
 			"comment": "the second part of regexp is to prevent to match only the § for detailed tags §todo: ",
 			"beginCaptures": {
 				"1": {
@@ -44,7 +44,7 @@
 		},
 		{
 			"name": "omni-tag-with-details",
-			"begin": "(§+)(?=([\\w_-]+:+)+)",
+			"begin": "([※§¤]+)(?=([\\w_-]+:+)+)",
 			"comment": "the second part of regexp is to ensure this is a tag with trailing colon",
 			"beginCaptures": {
 				"1": {
