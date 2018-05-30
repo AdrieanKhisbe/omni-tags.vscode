@@ -5,6 +5,10 @@
     "preview": true,
     "version": "0.1.0",
     "publisher": "adrieankhisbe",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AdrieanKhisbe/omni-tags.vscode"
+    },
     "engines": {
         "vscode": "^1.23.0"
     },
