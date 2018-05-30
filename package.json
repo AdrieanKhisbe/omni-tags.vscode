@@ -2,7 +2,8 @@
     "name": "omni-tags",
     "displayName": "Omni Tags",
     "description": "Omni §Tags for VSCode",
-    "version": "0.0.1",
+    "preview": true,
+    "version": "0.1.0",
     "publisher": "adrieankhisbe",
     "engines": {
         "vscode": "^1.23.0"

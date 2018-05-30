@@ -1,4 +1,4 @@
-# Omni Tags  - VsCode
+# Omni Tags - VsCode
 
 *Readme ToBeDone :)*
 
