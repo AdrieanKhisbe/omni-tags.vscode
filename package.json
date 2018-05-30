@@ -3,7 +3,7 @@
     "displayName": "Omni Tags",
     "description": "Omni §Tags for VSCode",
     "preview": true,
-    "version": "0.1.1",
+    "version": "0.1.2",
     "publisher": "adrieankhisbe",
     "repository": {
         "type": "git",
