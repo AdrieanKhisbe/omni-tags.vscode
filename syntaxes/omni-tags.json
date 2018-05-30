@@ -51,7 +51,7 @@
 					"name": "keyword.omni-tag"
 				}
 			},
-			"end": "\\z|$|(?=['\"`])",
+			"end": "\\z|$|(?<!\\\\)(?=['\"`])",
 			"patterns": [
 				{
 					"include": "#colon"
