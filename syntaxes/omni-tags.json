@@ -16,7 +16,7 @@
 		},
 		"ponctuation": {
 			"name": "markup.bold.omni-tag",
-			"match": "!|\\?|¡|"
+			"match": "[!\\?¡¿]"
 		}
 	},
 	"patterns": [
