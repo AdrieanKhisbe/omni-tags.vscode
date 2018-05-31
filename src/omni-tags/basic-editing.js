@@ -1,6 +1,4 @@
-const primarySymbol = '§';
-const secondarySymbol = '¤';
-const tertiarySymbol = '※';
+const {primarySymbol, secondarySymbol, tertiarySymbol} = require('./tags-definitions');
 
 module.exports = function (vscode) {
     const insertSymbol = symb => (textEditor, edit) => {
@@ -9,9 +7,6 @@ module.exports = function (vscode) {
     };
 
     return {
-        primarySymbol,
-        secondarySymbol,
-        tertiarySymbol,
         insertSecondarySymbol: insertSymbol(secondarySymbol),
         insertTertiarySymbol: insertSymbol(tertiarySymbol)
     };
