@@ -1,4 +1,4 @@
-
+const primarySymbol = '§';
 const secondarySymbol = '¤';
 const tertiarySymbol = '※';
 
@@ -9,6 +9,9 @@ module.exports = function (vscode) {
     };
 
     return {
+        primarySymbol,
+        secondarySymbol,
+        tertiarySymbol,
         insertSecondarySymbol: insertSymbol(secondarySymbol),
         insertTertiarySymbol: insertSymbol(tertiarySymbol)
     };
