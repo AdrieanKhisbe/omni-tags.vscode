@@ -10,10 +10,15 @@ suite("Tags definition", function () {
             test(`simpleTagRegex ${negate ? 'don\'t match' : 'match'} '${pattern}'`, () => {
                 expect(pattern)[negate ? 'not' : 'to'].to.match(simpleTagRegex);
             })
-        const matchs = ['§test', '§test2!', '§test:test', '§test_-_'];
-        const dontMatch = ['§test:', 'abctest'];
+        const matchs = [
+            '§test', '§test2!', '§test:test', '§test_-_',
+            '¤test', '¤test2!', '¤test:test', '¤test_-_',
+            '※test', '※test2!', '※test:test', '※test_-_'
+            ];
+        const dontMatch = ['§test:','¤test:','※test:', 'abctest'];
+
         matchs.map(pattern => testMatch(pattern, false));
         dontMatch.map(pattern => testMatch(pattern, true));
     });
-    
+
 });
