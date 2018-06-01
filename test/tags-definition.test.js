@@ -32,9 +32,9 @@ suite("Tags definition", function () {
                 }
             })
         const matchs = [
-            '§test: abc', '§test2: an: to:', '§test: abc \\\" \\\` \\\'', '§test: abc!',
-            '¤test: abc', '¤test2: an: to:', '¤test: abc \\\" \\\` \\\'', '¤test: abc!',
-            '※test: abc', '※test2: an: to:', '※test: abc \\\" \\\` \\\'', '※test: abc!'
+            '§test: abc', '§test2: an: to:', '§test: abc \\" \\` \\\'', '§test: abc!',
+            '¤test: abc', '¤test2: an: to:', '¤test: abc \\" \\` \\\'', '¤test: abc!',
+            '※test: abc', '※test2: an: to:', '※test: abc \\" \\` \\\'', '※test: abc!'
         ];
         const dontMatch = ['§test:abc', '§test:abc!', '¤test: abc " abc', '※test: abc "', 'abctest'];
 
