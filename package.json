@@ -18,7 +18,8 @@
     "activationEvents": [
         "onCommand:omni-tags.editing.insertSecondarySymbol",
         "onCommand:omni-tags.editing.insertTertiarySymbol",
-        "onCommand:omni-tags.navigate.gotoNextTag"
+        "onCommand:omni-tags.navigate.gotoNextTag",
+        "onCommand:omni-tags.navigate.gotoPreviousTag"
     ],
     "main": "./src/omni-tags",
     "contributes": {
@@ -26,6 +27,10 @@
             {
                 "command": "omni-tags.navigate.gotoNextTag",
                 "title": "Go to next §tag"
+            },
+            {
+                "command": "omni-tags.navigate.gotoPreviousTag",
+                "title": "Go to previous §tag"
             },
             {
                 "command": "omni-tags.editing.insertSecondarySymbol",
