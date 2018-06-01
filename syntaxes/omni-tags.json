@@ -8,7 +8,7 @@
 		},
 		"keyword": {
 			"name": "support.variable.omni-tag",
-			"match": "(?<=[※§¤:])\\w+"
+			"match": "(?<=[※§¤:])[\\w_-]+"
 		},
 		"details": {
 			"name": "text.plain.omni-tag",
