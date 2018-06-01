@@ -26,19 +26,19 @@
         "commands": [
             {
                 "command": "omni-tags.navigate.gotoNextTag",
-                "title": "Go to next §tag"
+                "title": "Omni-Tags: Go to next §tag"
             },
             {
                 "command": "omni-tags.navigate.gotoPreviousTag",
-                "title": "Go to previous §tag"
+                "title": "Omni-Tags: Go to previous §tag"
             },
             {
                 "command": "omni-tags.editing.insertSecondarySymbol",
-                "title": "Insert the secondary tag symbol"
+                "title": "Omni-Tags: Insert the secondary tag symbol"
             },
             {
                 "command": "omni-tags.editing.insertTertiarySymbol",
-                "title": "Insert the tertiary tag symbol"
+                "title": "Omni-Tags: Insert the tertiary tag symbol"
             }
         ],
         "grammars": [
