@@ -17,11 +17,16 @@
     ],
     "activationEvents": [
         "onCommand:omni-tags.editing.insertSecondarySymbol",
-        "onCommand:omni-tags.editing.insertTertiarySymbol"
+        "onCommand:omni-tags.editing.insertTertiarySymbol",
+        "onCommand:omni-tags.navigate.gotoNextTag"
     ],
     "main": "./src/omni-tags",
     "contributes": {
         "commands": [
+            {
+                "command": "omni-tags.navigate.gotoNextTag",
+                "title": "Go to next §tag"
+            },
             {
                 "command": "omni-tags.editing.insertSecondarySymbol",
                 "title": "Insert the secondary tag symbol"
