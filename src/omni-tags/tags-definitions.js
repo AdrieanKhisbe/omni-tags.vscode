@@ -4,6 +4,7 @@ const tertiarySymbol = '※';
 
 const symbolRegex = `[${primarySymbol}${secondarySymbol}${tertiarySymbol}]`;
 const simpleTagRegex = new RegExp(`${symbolRegex}(?!.*:(\\s|$))\\w[\\w-:]*[!\\?¡¿]*(?=\\s|$)`);
+const detailTagRegex = new RegExp(`${symbolRegex}\\w[\\w-:]*:\\s(\\\\['"\`]|[^'"\`])*(?=\\z|$)`);
 
 
 module.exports = {
@@ -11,5 +12,6 @@ module.exports = {
     secondarySymbol,
     tertiarySymbol,
     symbolRegex,
-    simpleTagRegex
+    simpleTagRegex,
+    detailTagRegex
 };

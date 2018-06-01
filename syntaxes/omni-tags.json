@@ -44,7 +44,7 @@
 		},
 		{
 			"name": "omni-tag-with-details",
-			"begin": "([※§¤]+)(?=([\\w_-]+:+)+)",
+			"begin": "([※§¤]+)(?=([\\w_-]+:+)+)\\s?+",
 			"comment": "the second part of regexp is to ensure this is a tag with trailing colon",
 			"beginCaptures": {
 				"1": {
