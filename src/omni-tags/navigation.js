@@ -2,11 +2,11 @@ const { symbolRegex } = require('./tags-definitions');
 
 module.exports = function (vscode) {
 
-    const tagSymbol = new RegExp(`${symbolRegex.source}+`, 'g');
-    const startWithTag = new RegExp(`^${symbolRegex.source}`);
 
     const gotoNextTag = args => {
         const n = args.n || 1;
+        const tagSymbol = new RegExp(`${symbolRegex.source}+`, 'g');
+        const startWithTag = new RegExp(`^${symbolRegex.source}`);
         const editor = vscode.window.activeTextEditor;
         const document = editor.document;
         const lastLine = document.lineCount - 1;
@@ -34,8 +34,11 @@ module.exports = function (vscode) {
         });
     }
 
+
     const gotoPreviousTag = (args) => {
         const n = args.n || 1;
+        const tagSymbol = new RegExp(`${symbolRegex.source}+`, 'g');
+        const startWithTag = new RegExp(`^${symbolRegex.source}`);
         const editor = vscode.window.activeTextEditor;
         const document = editor.document;
         const backwardRange = new vscode.Range(0, document.lineAt(0).range.start.character,
