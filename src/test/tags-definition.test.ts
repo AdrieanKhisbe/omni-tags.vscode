@@ -1,12 +1,12 @@
 /* global suite, test */
-const { expect } = require('chai');
+import { expect } from 'chai';
 
-const { simpleTagRegex, detailTagRegex } = require('../src/omni-tags/tags-definitions')
+import { simpleTagRegex, detailTagRegex } from '../omni-tags/tags-definitions';
 // Defines a Mocha test suite to group tests of similar kind together
 suite("Tags definition", function () {
 
     suite("simpleTagRegex behave as expected", function () {
-        const testMatch = (pattern, negate = false) =>
+        const testMatch = (pattern: string , negate = false) =>
             test(`simpleTagRegex ${negate ? 'don\'t match' : 'match'} '${pattern}'`, () => {
                 expect(pattern)[negate ? 'not' : 'to'].to.match(simpleTagRegex);
             })
@@ -22,7 +22,7 @@ suite("Tags definition", function () {
     });
 
     suite("detailTagRegex behave as expected", function () {
-        const testMatch = (pattern, negate = false) =>
+        const testMatch = (pattern: string, negate = false) =>
             test(`detailTagRegex ${negate ? 'don\'t match' : 'match'} '${pattern}'`, () => {
                 try {
                     expect(pattern)[negate ? 'not' : 'to'].to.match(new RegExp(`^${detailTagRegex.source}$`));

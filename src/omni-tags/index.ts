@@ -1,12 +1,9 @@
-const vscode = require('vscode');
-const _ = require('lodash');
-const basicEditing = require('./basic-editing');
-const navigation = require('./navigation');
+import * as vscode from 'vscode';
+import * as _ from 'lodash';
+import editingCommands from './basic-editing';
+import navigationCommands from './navigation';
 
-function activate(context) {
-    const editingCommands = basicEditing(vscode);
-    const navigationCommands = navigation(vscode);
-
+export function activate(context: vscode.ExtensionContext) {
     _.each(editingCommands, (handler, command) => {
         const disposable = vscode.commands.registerTextEditorCommand(`omni-tags.editing.${command}`, handler);
         context.subscriptions.push(disposable);
@@ -16,8 +13,4 @@ function activate(context) {
         context.subscriptions.push(disposable);
     }); 
 }
-exports.activate = activate;
-
-function deactivate() {
-}
-exports.deactivate = deactivate;
+export function deactivate() {};
