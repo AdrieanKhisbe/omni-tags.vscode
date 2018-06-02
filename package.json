@@ -47,6 +47,7 @@
                     "text",
                     "source",
                     "source.js",
+                    "source.ts",
                     "source.org"
                 ],
                 "scopeName": "inline.omni-tags",
