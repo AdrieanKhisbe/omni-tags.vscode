@@ -5,14 +5,14 @@ module.exports = function (vscode) {
     const tagSymbol = new RegExp(`${symbolRegex.source}+`, 'g');
     const startWithTag = new RegExp(`^${symbolRegex.source}`);
 
-    const gotoNextTag = (n = 1) => {
+    const gotoNextTag = args => {
+        const n = args.n || 1;
         const editor = vscode.window.activeTextEditor;
         const document = editor.document;
         const lastLine = document.lineCount - 1;
         const forwardRange = new vscode.Range(editor.selection.anchor.line, editor.selection.anchor.character,
             lastLine, document.lineAt(lastLine).range.end.character)
         const text = document.getText(forwardRange);
-
 
         const moveToTag = match => {
             const tagPosition = document.positionAt(document.offsetAt(editor.selection.start) + match.index);
@@ -30,8 +30,9 @@ module.exports = function (vscode) {
             i++;
         }
     }
-    const gotoPreviousTag = (n = 1) => {
-        try{
+
+    const gotoPreviousTag = (args) => {
+        const n = args.n || 1;
         const editor = vscode.window.activeTextEditor;
         const document = editor.document;
         console.log(document.lineAt(0).range)
@@ -56,12 +57,11 @@ module.exports = function (vscode) {
             else break;
             i++;
         }
-    }catch(err){
-        console.error(err)
     }
-    }
+
     return {
         gotoNextTag,
         gotoPreviousTag
     };
+
 }

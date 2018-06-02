@@ -65,6 +65,18 @@
                 "key": "ctrl+k 6",
                 "mac": "cmd+k 6",
                 "when": "editorTextFocus"
+            },
+            {
+                "command": "omni-tags.navigate.gotoNextTag",
+                "key": "alt+6",
+                "mac": "alt+6",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "omni-tags.navigate.gotoPreviousTag",
+                "key": "shift+alt+6",
+                "mac": "shift+alt+6",
+                "when": "editorTextFocus"
             }
         ]
     },
