@@ -2,9 +2,10 @@ import * as vscode from 'vscode';
 import * as _ from 'lodash';
 import editingCommands from './basic-editing';
 import navigationCommands from './navigation';
-import {OmniTagDocumentHighlightProvider} from './highlight-provider';
+import { OmniTagDocumentHighlightProvider } from './highlight-provider';
+import { OmniTagDocumentSymbolProvider } from './symbol-provider'
 
-const OMNI_TAG_MODE: vscode.DocumentFilter = { scheme: 'file' };
+const OMNI_TAGS_MODE: vscode.DocumentFilter = { scheme: 'file' };
 
 export function activate(context: vscode.ExtensionContext) {
     _.each(editingCommands, (handler, command) => {
@@ -18,7 +19,9 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(
         vscode.languages.registerDocumentHighlightProvider(
-            OMNI_TAG_MODE, new OmniTagDocumentHighlightProvider()));
+            OMNI_TAGS_MODE, new OmniTagDocumentHighlightProvider()));
+    context.subscriptions.push(
+        vscode.languages.registerDocumentSymbolProvider(OMNI_TAGS_MODE, new OmniTagDocumentSymbolProvider()))
 
 }
-export function deactivate() {};
+export function deactivate() { };
