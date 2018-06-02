@@ -29,14 +29,15 @@ module.exports = function (vscode) {
             } else break;
             i++;
         }
+        vscode.commands.executeCommand("revealLine", {
+            lineNumber: editor.selection.start.line
+        });
     }
 
     const gotoPreviousTag = (args) => {
         const n = args.n || 1;
         const editor = vscode.window.activeTextEditor;
         const document = editor.document;
-        console.log(document.lineAt(0).range)
-        console.log(editor.selection.anchor.character)
         const backwardRange = new vscode.Range(0, document.lineAt(0).range.start.character,
             editor.selection.anchor.line, editor.selection.anchor.character)
         const text = document.getText(backwardRange);
@@ -57,6 +58,10 @@ module.exports = function (vscode) {
             else break;
             i++;
         }
+
+        vscode.commands.executeCommand("revealLine", {
+            lineNumber: editor.selection.start.line
+        });
     }
 
     return {
