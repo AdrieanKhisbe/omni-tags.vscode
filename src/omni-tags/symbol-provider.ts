@@ -14,7 +14,7 @@ export class OmniTagDocumentSymbolProvider implements vscode.DocumentSymbolProvi
              document.positionAt(match.index),
              document.positionAt(match.index + match[0].length)
             );
-            symbols.push(new vscode.SymbolInformation(match[3], vscode.SymbolKind.Constant, range));
+            symbols.push(new vscode.SymbolInformation(`§${match[3]}`, vscode.SymbolKind.Constant, range));
      }
      return Promise.resolve(symbols);
     }
