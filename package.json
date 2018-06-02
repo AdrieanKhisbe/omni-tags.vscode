@@ -16,10 +16,7 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:omni-tags.editing.insertSecondarySymbol",
-        "onCommand:omni-tags.editing.insertTertiarySymbol",
-        "onCommand:omni-tags.navigate.gotoNextTag",
-        "onCommand:omni-tags.navigate.gotoPreviousTag"
+        "*"
     ],
     "main": "./out/omni-tags",
     "contributes": {
