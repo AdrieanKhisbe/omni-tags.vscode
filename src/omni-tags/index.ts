@@ -26,9 +26,9 @@ export function activate(context: vscode.ExtensionContext) {
 
     const omniTagsTreeProvider = new OmniTagsNodeProvider();
 
-	vscode.window.registerTreeDataProvider('omniTagsFileTree', omniTagsTreeProvider);
-	vscode.commands.registerCommand('omni-tags.tree.refresh', () => omniTagsTreeProvider.refresh());
-	// vscode.commands.registerCommand('omni-tags.tree.openSelection', range => omniTagsTreeProvider.select(range));
+	vscode.window.registerTreeDataProvider('omni-tags.fileTree', omniTagsTreeProvider);
+	vscode.commands.registerCommand('omni-tags.fileTree.refresh', () => omniTagsTreeProvider.refresh());
+	// vscode.commands.registerCommand('omniTagsFileTree.openSelection', range => omniTagsTreeProvider.select(range));
 
 }
 export function deactivate() { };

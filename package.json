@@ -38,14 +38,18 @@
                 "title": "Omni-Tags: Insert the tertiary tag symbol"
             },
             {
-                "command": "omni-tags.tree.refresh",
-                "title": "Omni-Tags: Refresh Omni Tags File Outline"
+                "command": "omni-tags.fileTree.refresh",
+                "title": "Refresh",
+                "icon": {
+                    "light": "resources/light/refresh.svg",
+                    "dark": "resources/dark/refresh.svg"
+                }
             }
         ],
         "views": {
             "explorer": [
                 {
-                    "id": "omniTagsFileTree",
+                    "id": "omni-tags.fileTree",
                     "name": "Omni Tags File Outline"
                 }
             ]
@@ -88,7 +92,16 @@
                 "mac": "shift+alt+6",
                 "when": "editorTextFocus"
             }
-        ]
+        ],
+        "menus": {
+            "view/title": [
+                {
+                    "command": "omni-tags.fileTree.refresh",
+                    "when": "view == omni-tags.fileTree",
+                    "group": "navigation"
+                }
+            ]
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
