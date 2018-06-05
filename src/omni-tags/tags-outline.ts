@@ -67,14 +67,12 @@ class OmniTagItem extends vscode.TreeItem {
 	}
 
 	get tooltip(): string {
-		return `${this.label}`
+		return `${this.label} - line ${this.range.start.line + 1}`
 	}
-
 	iconPath = {
-		light: path.join(__filename, '..', '..', '..', 'resources', 'light', 'dependency.svg'),
-		dark: path.join(__filename, '..', '..', '..', 'resources', 'dark', 'dependency.svg')
+		light: path.join(__dirname, '..', '..', 'resources', 'light', 'reference-mark.svg'),
+		dark: path.join(__dirname, '..', '..', 'resources', 'dark', 'reference-mark.svg')
 	};
 
 	contextValue = 'omni-tags';
-
 }
