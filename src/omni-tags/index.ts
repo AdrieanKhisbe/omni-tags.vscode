@@ -5,6 +5,7 @@ import navigationCommands from './navigation';
 import { OmniTagDocumentHighlightProvider } from './highlight-provider';
 import { OmniTagDocumentSymbolProvider } from './symbol-provider'
 import { OmniTagsNodeProvider } from './tags-outline';
+import { createApplyGutterFunction } from './tags-gutter';
 
 const OMNI_TAGS_MODE: vscode.DocumentFilter = { scheme: 'file' };
 
@@ -26,9 +27,26 @@ export function activate(context: vscode.ExtensionContext) {
 
     const omniTagsTreeProvider = new OmniTagsNodeProvider();
 
-	vscode.window.registerTreeDataProvider('omni-tags.fileTree', omniTagsTreeProvider);
-	vscode.commands.registerCommand('omni-tags.fileTree.refresh', () => omniTagsTreeProvider.refresh());
-	vscode.commands.registerCommand('omni-fags.fileTree.openSelection', range => omniTagsTreeProvider.select(range));
+    vscode.window.registerTreeDataProvider('omni-tags.fileTree', omniTagsTreeProvider);
+    vscode.commands.registerCommand('omni-tags.fileTree.refresh', () => omniTagsTreeProvider.refresh());
+    vscode.commands.registerCommand('omni-fags.fileTree.openSelection', range => omniTagsTreeProvider.select(range));
 
+    const addTagToGutter = createApplyGutterFunction(context);
+    vscode.window.onDidChangeActiveTextEditor(
+        editor => addTagToGutter(editor),
+        null,
+        context.subscriptions,
+    );
+    vscode.window.onDidChangeTextEditorSelection(
+        event => addTagToGutter(event.textEditor),
+        null,
+        context.subscriptions,
+    );
+    vscode.workspace.onDidChangeTextDocument(
+        event => addTagToGutter(vscode.window.activeTextEditor),
+        null,
+        context.subscriptions,
+      )
+    addTagToGutter(vscode.window.activeTextEditor);
 }
 export function deactivate() { };
