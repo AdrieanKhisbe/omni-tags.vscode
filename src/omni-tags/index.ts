@@ -4,6 +4,7 @@ import editingCommands from './basic-editing';
 import navigationCommands from './navigation';
 import { OmniTagDocumentHighlightProvider } from './highlight-provider';
 import { OmniTagDocumentSymbolProvider } from './symbol-provider'
+import { OmniTagsNodeProvider } from './tags-outline';
 
 const OMNI_TAGS_MODE: vscode.DocumentFilter = { scheme: 'file' };
 
@@ -22,6 +23,12 @@ export function activate(context: vscode.ExtensionContext) {
             OMNI_TAGS_MODE, new OmniTagDocumentHighlightProvider()));
     context.subscriptions.push(
         vscode.languages.registerDocumentSymbolProvider(OMNI_TAGS_MODE, new OmniTagDocumentSymbolProvider()))
+
+    const omniTagsTreeProvider = new OmniTagsNodeProvider();
+
+	vscode.window.registerTreeDataProvider('omniTagsFileTree', omniTagsTreeProvider);
+	vscode.commands.registerCommand('omni-tags.tree.refresh', () => omniTagsTreeProvider.refresh());
+	// vscode.commands.registerCommand('omni-tags.tree.openSelection', range => omniTagsTreeProvider.select(range));
 
 }
 export function deactivate() { };

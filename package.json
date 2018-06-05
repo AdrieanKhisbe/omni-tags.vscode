@@ -36,8 +36,20 @@
             {
                 "command": "omni-tags.editing.insertTertiarySymbol",
                 "title": "Omni-Tags: Insert the tertiary tag symbol"
+            },
+            {
+                "command": "omni-tags.tree.refresh",
+                "title": "Omni-Tags: Refresh Omni Tags File Outline"
             }
         ],
+        "views": {
+            "explorer": [
+                {
+                    "id": "omniTagsFileTree",
+                    "name": "Omni Tags File Outline"
+                }
+            ]
+        },
         "grammars": [
             {
                 "injectTo": [
