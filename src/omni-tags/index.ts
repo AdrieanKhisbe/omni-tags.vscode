@@ -28,7 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	vscode.window.registerTreeDataProvider('omni-tags.fileTree', omniTagsTreeProvider);
 	vscode.commands.registerCommand('omni-tags.fileTree.refresh', () => omniTagsTreeProvider.refresh());
-	// vscode.commands.registerCommand('omniTagsFileTree.openSelection', range => omniTagsTreeProvider.select(range));
+	vscode.commands.registerCommand('omni-fags.fileTree.openSelection', range => omniTagsTreeProvider.select(range));
 
 }
 export function deactivate() { };

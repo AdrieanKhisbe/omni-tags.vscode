@@ -15,11 +15,16 @@ export class OmniTagsNodeProvider implements vscode.TreeDataProvider<OmniTagItem
 	}
 
 	getTreeItem(element: OmniTagItem): vscode.TreeItem {
+		element.command = {
+			command: 'omni-fags.fileTree.openSelection',
+			title: '',
+			arguments: [element.range]
+		};
 		return element;
 	}
 
 	getChildren(element?: OmniTagItem): Thenable<OmniTagItem[]> {
-		
+
 		return new Promise(resolve => {
 			if (element) {
 				resolve([]); // No nesting so far
@@ -30,7 +35,6 @@ export class OmniTagsNodeProvider implements vscode.TreeDataProvider<OmniTagItem
 				let match;
 				const documentText = document.getText();
 				while (match = pattern.exec(documentText)) {
-					console.log(match)
 					const range = new vscode.Range(
 						document.positionAt(match.index),
 						document.positionAt(match.index + match[0].length)
@@ -42,6 +46,13 @@ export class OmniTagsNodeProvider implements vscode.TreeDataProvider<OmniTagItem
 		});
 	}
 
+	select(range: vscode.Range) {
+		if (vscode.window.activeTextEditor) {
+			vscode.window.activeTextEditor.selection = new vscode.Selection(range.start, range.end);
+			vscode.window.showTextDocument(vscode.window.activeTextEditor.document);
+		}
+	}
+
 }
 
 class OmniTagItem extends vscode.TreeItem {
@@ -50,7 +61,7 @@ class OmniTagItem extends vscode.TreeItem {
 		public readonly label: string,
 		public readonly range: vscode.Range,
 		public readonly collapsibleState: vscode.TreeItemCollapsibleState,
-		public readonly command?: vscode.Command
+		public command?: vscode.Command
 	) {
 		super(label, collapsibleState);
 	}
