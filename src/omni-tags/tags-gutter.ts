@@ -4,15 +4,18 @@ import { keywordTagRegex } from './tags-definitions';
 export function createApplyGutterFunction(context: vscode.ExtensionContext) {
 
 	const gutterIconSize = '75%'; // ¤note: ou “contain”
+	const opacity = '0.9'; // §TODO: future use, toggle opacity, between meen and max
 	const omniTagDecorator = vscode.window.createTextEditorDecorationType(
 		{
 			dark: {
 				gutterIconPath: context.asAbsolutePath('resources/dark/reference-mark.svg'),
-				gutterIconSize
+				gutterIconSize,
+				opacity
 			},
 			light: {
 				gutterIconPath: context.asAbsolutePath('resources/light/reference-mark.svg'),
-				gutterIconSize
+				gutterIconSize,
+				opacity
 			}
 		}
 	)
