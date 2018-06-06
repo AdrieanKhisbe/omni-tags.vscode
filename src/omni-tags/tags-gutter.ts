@@ -3,10 +3,17 @@ import { keywordTagRegex } from './tags-definitions';
 
 export function createApplyGutterFunction(context: vscode.ExtensionContext) {
 
+	const gutterIconSize = '75%'; // ¤note: ou “contain”
 	const omniTagDecorator = vscode.window.createTextEditorDecorationType(
 		{
-			gutterIconPath: context.asAbsolutePath('resources/dark/reference-mark.svg'),
-			gutterIconSize: '75%' // ¤note: ou “contain”
+			dark: {
+				gutterIconPath: context.asAbsolutePath('resources/dark/reference-mark.svg'),
+				gutterIconSize
+			},
+			light: {
+				gutterIconPath: context.asAbsolutePath('resources/light/reference-mark.svg'),
+				gutterIconSize
+			}
 		}
 	)
 	context.subscriptions.push(omniTagDecorator);
