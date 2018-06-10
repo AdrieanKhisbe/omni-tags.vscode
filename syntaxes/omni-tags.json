@@ -12,7 +12,7 @@
 		},
 		"details": {
 			"name": "text.plain.omni-tag",
-			"match": "(?<=:\\s)[^'\"`]*"
+			"match": "(?<=:\\s)[^'\"`※§¤:]*(?<!\\s)"
 		},
 		"ponctuation": {
 			"name": "markup.bold.omni-tag",
@@ -51,13 +51,13 @@
 					"name": "keyword.omni-tag"
 				}
 			},
-			"end": "\\z|$|(?<!\\\\)(?=['\"`])",
+			"end": "\\z|$|(?<!\\\\)(?=['\"`])|(?<!\\s)(?=\\s+[※§¤])",
 			"patterns": [
 				{
-					"include": "#colon"
+					"include": "#keyword"
 				},
 				{
-					"include": "#keyword"
+					"include": "#colon"
 				},
 				{
 					"include": "#ponctuation"
