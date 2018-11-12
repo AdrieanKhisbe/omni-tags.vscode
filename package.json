@@ -61,7 +61,8 @@
                     "source",
                     "source.js",
                     "source.ts",
-                    "source.org"
+                    "source.org",
+                    "source.yaml"
                 ],
                 "scopeName": "inline.omni-tags",
                 "path": "./syntaxes/omni-tags.json"
