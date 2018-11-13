@@ -29,7 +29,10 @@ export const gotoNextTag = (args: NavigationArg) => {
 
         if (match) {
             moveToTag(match);
-        } else break;
+        } else {
+            vscode.window.showWarningMessage('No further tags ahead');
+            break;
+        }
         i++;
     }
     vscode.commands.executeCommand("revealLine", {
@@ -62,7 +65,10 @@ export const gotoPreviousTag = (args: NavigationArg) => {
     while (i < n) {
         const backwardMatch = matchStack.pop()
         if (backwardMatch) moveToTag(backwardMatch);
-        else break;
+        else {
+            vscode.window.showWarningMessage('No further tags behind');
+            break;
+        }
         i++;
     }
 
