@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { symbolRegex, keywordTagRegex } from './tags-definitions';
+import { symbolRegex } from './tags-definitions';
 
 export interface NavigationArg {
     n?: number;

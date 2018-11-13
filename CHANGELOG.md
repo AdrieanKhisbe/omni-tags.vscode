@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [Unreleased]
 *Nothing so Far*
 
+## [0.4.1] - 2018-11-14
+### Fixed
+- Repared navigations commands
+
 ## [0.4.0] - 2018-11-12
 ### Added
 - Injection to yaml
