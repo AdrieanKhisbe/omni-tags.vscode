@@ -6,7 +6,7 @@ export interface NavigationArg {
 }
 
 export const gotoNextTag = (args: NavigationArg) => {
-    const n = args.n || 1;
+    const n = args && args.n || 1;
     const tagSymbol = new RegExp(`${symbolRegex.source}+`, 'g');
     const startWithTag = new RegExp(`^${symbolRegex.source}`);
     const editor = vscode.window.activeTextEditor;
@@ -39,7 +39,7 @@ export const gotoNextTag = (args: NavigationArg) => {
 
 
 export const gotoPreviousTag = (args: NavigationArg) => {
-    const n = args.n || 1;
+    const n = args && args.n || 1;
     const tagSymbol = new RegExp(`${symbolRegex.source}+`, 'g');
     const startWithTag = new RegExp(`^${symbolRegex.source}`);
     const editor = vscode.window.activeTextEditor;
