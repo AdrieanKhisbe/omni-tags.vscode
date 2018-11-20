@@ -61,6 +61,7 @@
                     "source",
                     "source.js",
                     "source.ts",
+                    "source.python",
                     "source.org",
                     "source.yaml"
                 ],
