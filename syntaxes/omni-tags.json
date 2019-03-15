@@ -1,6 +1,6 @@
 {
 	"fileTypes": [],
-	"injectionSelector": "comment, text.plain, string",
+	"injectionSelector": "comment, text, string",
 	"repository": {
 		"colon": {
 			"name": "constant.language.omni-tag",

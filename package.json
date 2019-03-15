@@ -58,12 +58,7 @@
             {
                 "injectTo": [
                     "text",
-                    "source",
-                    "source.js",
-                    "source.ts",
-                    "source.python",
-                    "source.org",
-                    "source.yaml"
+                    "source"
                 ],
                 "scopeName": "inline.omni-tags",
                 "path": "./syntaxes/omni-tags.json"
