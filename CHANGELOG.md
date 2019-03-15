@@ -6,6 +6,16 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [Unreleased]
 *Nothing so Far*
 
+## [0.5.0] - 2019-03-15
+### Added
+- Add MIT Licence
+
+### Changed
+- Injection to all source and text thanks to https://github.com/Microsoft/vscode/pull/50534 release
+### Fixed
+- Outline regex now support complex tags
+
+
 ## [0.4.1] - 2018-11-14
 ### Fixed
 - Repared navigations commands
