@@ -23,7 +23,6 @@ export const gotoNextTag = (args: NavigationArg) => {
         match = tagSymbol.exec(text);
         i++;
     }
-    console.log(match)
     if (match) { // move to tag
         const tagPosition = document.positionAt(document.offsetAt(editor.selection.start) + match.index);
         editor.selection = new vscode.Selection(tagPosition, tagPosition);

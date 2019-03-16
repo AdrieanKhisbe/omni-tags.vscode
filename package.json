@@ -18,7 +18,7 @@
     "activationEvents": [
         "*"
     ],
-    "main": "./out/omni-tags",
+    "main": "./dist/omni-tags",
     "contributes": {
         "commands": [
             {
