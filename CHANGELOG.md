@@ -6,9 +6,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [Unreleased]
 *Nothing so Far*
 
+## [0.5.2] - 2019-03-16
+### Fixed
+- Fixed main path to extension
 ## [0.5.1] - 2019-03-16
 ### Changed
-- Set up  webpack to bundle the extension
+- Set up webpack to bundle the extension
 
 ## [0.5.0] - 2019-03-15
 ### Added
