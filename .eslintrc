@@ -1,0 +1,25 @@
+{
+    "parser":  "@typescript-eslint/parser",
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@-k/base"
+    ],
+    "settings": {
+        "import/core-modules": ["vscode"]
+    },
+    "rules": {
+        "prettier/prettier": ["error", {
+            "tabWidth": 4,
+            "singleQuote": true,
+            "printWidth": 100,
+            "bracketSpacing": false
+        }],
+        "no-const-assign": "warn",
+        "no-this-before-super": "warn",
+        "no-undef": "warn",
+        "no-unreachable": "warn",
+        "no-unused-vars": "warn",
+        "constructor-super": "warn",
+        "valid-typeof": "warn"
+    }
+}
