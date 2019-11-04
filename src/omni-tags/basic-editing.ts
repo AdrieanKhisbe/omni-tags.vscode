@@ -1,8 +1,10 @@
 import * as vscode from 'vscode';
-import { secondarySymbol, tertiarySymbol } from './tags-definitions';
+import {secondarySymbol, tertiarySymbol} from './tags-definitions';
 
-
-const insertSymbol = (symb: string) => (textEditor: vscode.TextEditor, edit: vscode.TextEditorEdit) => {
+const insertSymbol = (symb: string) => (
+    textEditor: vscode.TextEditor,
+    edit: vscode.TextEditorEdit
+) => {
     const position = textEditor.selection.active;
     edit.insert(position, symb);
 };

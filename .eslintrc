@@ -5,7 +5,17 @@
         "plugin:@-k/base"
     ],
     "settings": {
-        "import/core-modules": ["vscode"]
+        "import/core-modules": ["vscode"],
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts"]
+        },
+        "import/extensions": [".js", ".ts"],
+        "import/resolver": {
+            "typescript": {
+              "alwaysTryTypes": true,
+              "directory": "."
+            }
+        }
     },
     "rules": {
         "prettier/prettier": ["error", {
@@ -14,6 +24,8 @@
             "printWidth": 100,
             "bracketSpacing": false
         }],
+        "lodash-fp/use-fp": "warn",
+        "import/namespace": "off",
         "no-const-assign": "warn",
         "no-this-before-super": "warn",
         "no-undef": "warn",
