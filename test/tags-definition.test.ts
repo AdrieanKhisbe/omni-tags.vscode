@@ -1,5 +1,5 @@
 /* global suite, test */
-import {simpleTagRegex, detailTagRegex} from '../omni-tags/tags-definitions';
+import {simpleTagRegex, detailTagRegex} from '../src/omni-tags/tags-definitions';
 import {expect} from 'chai';
 
 // Defines a Mocha test suite to group tests of similar kind together
