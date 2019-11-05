@@ -5,6 +5,7 @@
     "preview": true,
     "version": "0.5.2",
     "publisher": "adrieankhisbe",
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/AdrieanKhisbe/omni-tags.vscode"
