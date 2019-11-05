@@ -7,7 +7,7 @@
             "es6"
         ],
         "sourceMap": true,
-        "rootDir": "src",
+        "rootDir": ".",
         /* Strict Type-Checking Option */
         "strict": true,   /* enable all strict type-checking options */
         /* Additional Checks */
@@ -19,5 +19,9 @@
     "exclude": [
         "node_modules",
         ".vscode-test"
-    ]
+    ],
+    "include": [
+        "./src",
+        "./test"
+    ],
 }
