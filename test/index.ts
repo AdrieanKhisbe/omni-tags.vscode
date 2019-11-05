@@ -13,7 +13,11 @@ async function main() {
         const extensionTestsPath = path.resolve(__dirname, './run-test');
 
         // Download VS Code, unzip it and run the integration test
-        await runTests({extensionDevelopmentPath, extensionTestsPath});
+        await runTests({
+            extensionDevelopmentPath,
+            extensionTestsPath,
+            launchArgs: ['--disable-extensions']
+        });
     } catch (err) {
         console.error('Failed to run tests:', err.message || err);
         // eslint-disable-next-line unicorn/no-process-exit
