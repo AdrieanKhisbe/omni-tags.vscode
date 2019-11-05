@@ -114,24 +114,24 @@
         "@types/chai": "^4.2.4",
         "@types/glob": "^7.1.1",
         "@types/lodash": "^4.14.144",
-        "@types/mocha": "^2.2.48",
+        "@types/mocha": "^5.2.7",
         "@types/node": "^12.12.5",
         "@types/vscode": "^1.39.0",
         "@typescript-eslint/eslint-plugin": "^2.6.1",
         "@typescript-eslint/parser": "^2.6.1",
-        "chai": "^4.1.2",
+        "chai": "^4.2.0",
         "eslint": "^6.6.0",
         "eslint-import-resolver-typescript": "^2.0.0",
         "glob": "^7.1.5",
         "mocha": "^6.2.2",
-        "ts-loader": "^5.3.3",
-        "tslint-config-prettier": "^1.16.0",
+        "ts-loader": "^6.2.1",
+        "tslint-config-prettier": "^1.18.0",
         "typescript": "^3.6.4",
         "vscode-test": "^1.2.2",
-        "webpack": "^4.29.6",
-        "webpack-cli": "^3.3.0"
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10"
     },
     "dependencies": {
-        "lodash": "^4.17.10"
+        "lodash": "^4.17.15"
     }
 }
