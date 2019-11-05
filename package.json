@@ -107,7 +107,8 @@
         "test-compile": "tsc -p ./",
         "lint": "eslint src --ext .ts",
         "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        "test:unit": "npm run compile && node ./node_modules/vscode/bin/test",
+        "test": "npm run lint && npm run test:unit"
     },
     "devDependencies": {
         "@-k/eslint-plugin": "^0.2.0",
