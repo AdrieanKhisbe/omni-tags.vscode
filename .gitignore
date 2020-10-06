@@ -4,3 +4,4 @@ node_modules
 out
 private
 dist
+.vscode/settings.json
