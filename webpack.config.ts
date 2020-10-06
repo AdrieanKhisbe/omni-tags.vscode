@@ -8,11 +8,11 @@ const config: Configuration = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'omni-tags.js',
         libraryTarget: 'commonjs2',
-        devtoolModuleFilenameTemplate: '../[resource-path]'
+        devtoolModuleFilenameTemplate: '../[resource-path]',
     },
     devtool: 'source-map',
     externals: {
-        vscode: 'commonjs vscode'
+        vscode: 'commonjs vscode',
     },
     resolve: {extensions: ['.ts', '.js']},
     module: {
@@ -20,9 +20,9 @@ const config: Configuration = {
             {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                use: [{loader: 'ts-loader'}]
-            }
-        ]
-    }
+                use: [{loader: 'ts-loader'}],
+            },
+        ],
+    },
 };
 module.exports = config;

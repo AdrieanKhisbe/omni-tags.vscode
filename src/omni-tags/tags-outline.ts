@@ -17,7 +17,7 @@ class OmniTagItem extends vscode.TreeItem {
     }
     iconPath = {
         light: path.join(__dirname, '..', '..', 'resources', 'light', 'reference-mark.svg'),
-        dark: path.join(__dirname, '..', '..', 'resources', 'dark', 'reference-mark.svg')
+        dark: path.join(__dirname, '..', '..', 'resources', 'dark', 'reference-mark.svg'),
     };
 
     contextValue = 'omni-tags';
@@ -41,13 +41,13 @@ export class OmniTagsNodeProvider implements vscode.TreeDataProvider<OmniTagItem
         element.command = {
             command: 'omni-fags.fileTree.openSelection',
             title: '',
-            arguments: [element.range]
+            arguments: [element.range],
         };
         return element;
     }
 
     getChildren(element?: OmniTagItem): Thenable<OmniTagItem[]> {
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
             if (element) {
                 resolve([]); // No nesting so far
             } else if (vscode.window.activeTextEditor) {

@@ -1,10 +1,10 @@
 /* global suite, test */
-import {simpleTagRegex, detailTagRegex} from '../src/omni-tags/tags-definitions';
 import {expect} from 'chai';
+import {simpleTagRegex, detailTagRegex} from '../src/omni-tags/tags-definitions';
 
 // Defines a Mocha test suite to group tests of similar kind together
-suite('Tags definition', function() {
-    suite('simpleTagRegex behave as expected', function() {
+suite('Tags definition', function () {
+    suite('simpleTagRegex behave as expected', function () {
         const testMatch = (pattern: string, negate = false) =>
             test(`simpleTagRegex ${negate ? "don't match" : 'match'} '${pattern}'`, () => {
                 expect(pattern)[negate ? 'not' : 'to'].to.match(simpleTagRegex);
@@ -21,15 +21,15 @@ suite('Tags definition', function() {
             '※test',
             '※test2!',
             '※test:test',
-            '※test_-_'
+            '※test_-_',
         ];
         const dontMatch = ['§test:', '¤test:', '※test:', 'abctest'];
 
-        matchs.map(pattern => testMatch(pattern, false));
-        dontMatch.map(pattern => testMatch(pattern, true));
+        matchs.map((pattern) => testMatch(pattern, false));
+        dontMatch.map((pattern) => testMatch(pattern, true));
     });
 
-    suite('detailTagRegex behave as expected', function() {
+    suite('detailTagRegex behave as expected', function () {
         const testMatch = (pattern: string, negate = false) =>
             test(`detailTagRegex ${negate ? "don't match" : 'match'} '${pattern}'`, () => {
                 try {
@@ -53,17 +53,17 @@ suite('Tags definition', function() {
             '※test: abc',
             '※test2: an: to:',
             '※test: abc \\" \\` \\\'',
-            '※test: abc!'
+            '※test: abc!',
         ];
         const dontMatch = [
             '§test:abc',
             '§test:abc!',
             '¤test: abc " abc',
             '※test: abc "',
-            'abctest'
+            'abctest',
         ];
 
-        matchs.map(pattern => testMatch(pattern, false));
-        dontMatch.map(pattern => testMatch(pattern, true));
+        matchs.map((pattern) => testMatch(pattern, false));
+        dontMatch.map((pattern) => testMatch(pattern, true));
     });
 });

@@ -8,13 +8,13 @@ export function createApplyGutterFunction(context: vscode.ExtensionContext) {
         dark: {
             gutterIconPath: context.asAbsolutePath('resources/dark/reference-mark.svg'),
             gutterIconSize,
-            opacity
+            opacity,
         },
         light: {
             gutterIconPath: context.asAbsolutePath('resources/light/reference-mark.svg'),
             gutterIconSize,
-            opacity
-        }
+            opacity,
+        },
     });
     context.subscriptions.push(omniTagDecorator);
 

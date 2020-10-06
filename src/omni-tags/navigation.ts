@@ -35,7 +35,7 @@ export const gotoNextTag = (args: NavigationArg) => {
         );
         editor.selection = new vscode.Selection(tagPosition, tagPosition);
         vscode.commands.executeCommand('revealLine', {
-            lineNumber: editor.selection.start.line
+            lineNumber: editor.selection.start.line,
         });
     } else {
         vscode.window.showWarningMessage('No further tags ahead');
@@ -72,7 +72,7 @@ export const gotoPreviousTag = (args: NavigationArg) => {
         const tagPosition = document.positionAt(backwardMatch.index);
         editor.selection = new vscode.Selection(tagPosition, tagPosition);
         vscode.commands.executeCommand('revealLine', {
-            lineNumber: editor.selection.start.line
+            lineNumber: editor.selection.start.line,
         });
     } else {
         vscode.window.showWarningMessage('No further tags behind');
@@ -88,5 +88,5 @@ Code for similar tag:
 
 export default {
     gotoNextTag,
-    gotoPreviousTag
+    gotoPreviousTag,
 };
